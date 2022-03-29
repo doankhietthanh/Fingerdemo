@@ -75,7 +75,7 @@ get(child(ref(getDatabase()), "finger/"))
       names.forEach((name) => {
         const fingerItems = fingers[names.indexOf(name)];
         const idItems = Object.keys(fingerItems);
-        console.log(name, idItems);
+        // console.log(name, idItems);
         renderUser(name, idItems);
         idItems.forEach((id) => {
           listIDFinger.push(id);
@@ -119,7 +119,7 @@ document.getElementById("add-finger").addEventListener("click", (e) => {
   addFinger(name, id);
 });
 
-setStatusFinger("Hoang", "18", true);
+setStatusFinger("Hoang", "18", false);
 
 document.getElementById("remove-finger").addEventListener("click", (e) => {
   e.preventDefault();
@@ -138,7 +138,7 @@ const removeFinger = (name, id) => {
   }
 };
 const renderUser = (name, id) => {
-  console.log(id);
+  // console.log(id);
   id.forEach((i, index) => {
     const html = `
      <tr>
@@ -165,3 +165,19 @@ const renderUser = (name, id) => {
     });
   });
 };
+
+document.getElementById("open-door").addEventListener("click", (e) => {
+  e.preventDefault();
+  setDoor(true);
+  setTimeout(() => {
+    setDoor(false);
+    console.log("DOOR is CLOSE");
+  }, 5000);
+  console.log("DOOR is OPEN");
+});
+
+document.getElementById("close-door").addEventListener("click", (e) => {
+  e.preventDefault();
+  setDoor(false);
+  console.log("DOOR is CLOSE");
+});
