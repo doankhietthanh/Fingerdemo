@@ -62,7 +62,7 @@ onValue(getFingers, (snapshot) => {
     console.log("DOOR is OPEN");
   } else {
     setDoor(false);
-    console.log("DOOR is CLOSE");
+    console.log("DOOR is auto CLOSE after 5 seconds");
   }
 });
 
@@ -171,7 +171,7 @@ document.getElementById("open-door").addEventListener("click", (e) => {
   setDoor(true);
   setTimeout(() => {
     setDoor(false);
-    console.log("DOOR is CLOSE");
+    console.log("DOOR is auto CLOSE after 5 seconds");
   }, 5000);
   console.log("DOOR is OPEN");
 });
